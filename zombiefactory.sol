@@ -19,8 +19,10 @@
 // 1#CAP_1. Version de solidity.
 pragma solidity ^0.8.11;
 
+import "./ownable.sol";
+
 // 1#CAP_2. Estructura de un contrato.
-contract ZombieFactory {
+contract ZombieFactory is Ownable {
     /*
      * 1#CAP_13: Eventos:
      * Son la forma en la que nuestro contrato comunica que algo sucedió en la cadena de bloques
