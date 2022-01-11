@@ -39,10 +39,26 @@ contract KittyInterface {
  * 2#CAP_5: Herencia (POO)
  */
 contract ZombieFeeding is ZombieFactory {
-    // direccion del SmartContract de CryptoKitties.
-    address ckAddress = 0x06012c8cf97BEaD5deAe237070F9587f8E7A266d;
+    // NO! direccion hardcodeada del SmartContract de CryptoKitties.
+    // address ckAddress = 0x06012c8cf97BEaD5deAe237070F9587f8E7A266d;
     // 2#CAP_11: hacemos uso de nuestra interface.
-    KittyInterface kittyContract = KittyInterface(ckAddress);
+    // KittyInterface kittyContract = KittyInterface(ckAddress);
+
+    /*
+     * 3#CAP_1: Que pasa con las dependencias externas?
+     * Una vez se sube un contrato este no puede ser modificado, si tiene un error es necesario
+     * crear un nuevo contrato y pedir a los usuarios que lo utilicen. Esto es para mantener los
+     * estandares de SEGURIDAD.
+     *
+     * En este caso si el ckAddress tuviera un error nos romperia nuestro contrato.
+     *
+     * Solucion:
+     */
+    KittyInterface kittyContract;
+
+    function setKittyContractAddress(address _address) external {
+        kittyContract = KittyInterface(_address);
+    }
 
     /*
      * 2#CAP_7: Storage vs Memory:
