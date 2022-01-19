@@ -1,4 +1,4 @@
-# Aprendiendo Solidity con [CryptoZombies](https://cryptozombies.io/).
+# 📝 Notas del curso: Aprendiendo Solidity con [CryptoZombies](https://cryptozombies.io/).
 
 # Sección 1: Creando la Fábrica de Zombies
 
